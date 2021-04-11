@@ -1,3 +1,4 @@
+#GPUs: 24 and 17
 read "Num_MV"
 
 
