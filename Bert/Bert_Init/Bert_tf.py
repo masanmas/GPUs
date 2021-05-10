@@ -75,7 +75,7 @@ print(
 #FUNCION PARA CREAR EL MODELO TENSOR FLOW DOS CAPAS, HIDDEN CON TAMAÑO BERT_NHIDDENS y CAPA DE SALIDA TAMAÑO NCLASES
 def create_model():
 	model = keras.Sequential([
-		keras.layers.Dense(BERT_NHIDDENS, activation='relu'),
+		keras.layers.Flatten(input_shape=(1,BERT_HIDDENS)),
 		keras.layers.Dense(NCLASES, activation='softmax')
 	])
 
@@ -89,7 +89,11 @@ def create_model():
 
 
 
-
 outputs, cls_output = bert(encoder['input_ids'], encoder['attention_mask'], return_dict=False)
 
 print(cls_output.shape)
+
+model = create_model()
+print(model.summary())
+
+model.fit(cls_output, [1])
