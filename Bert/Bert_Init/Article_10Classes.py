@@ -68,7 +68,7 @@ class IMDBdataset(Dataset):
             'review': review,
             'input_ids': encoding['input_ids'].flatten(),
             'attention_mask': encoding['attention_mask'].flatten(),
-            'label': torch.tensor(label, dtype=torch,int32)
+            'label': torch.tensor(label, dtype=torch.int32)
         } 
 
 def data_loader(df, tokenizer, max_len, batch_size):
