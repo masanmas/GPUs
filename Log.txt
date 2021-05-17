@@ -1,0 +1,5 @@
+[23:22 - 16/05/2021]
+IMDb dataset, link: https://ai.stanford.edu/~amaas/data/sentiment/
+MORE INFO: https://paperswithcode.com/dataset/imdb-movie-reviews
+
+BERT CLASSIFICATION: https://paperswithcode.com/paper/docbert-bert-for-document-classification

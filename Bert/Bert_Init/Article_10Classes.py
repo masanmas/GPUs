@@ -111,16 +111,17 @@ class BERTArticleClassificator(nn.Module):
 
         else:
             output = self.linear(cls_output)
-      if not testing:
-        return output
 
-      else:
-        return {
-          'tokens_output': aux,
-          'cls_output': cls_output,
-          'output': output,
-          'linear_output': self.linear
-      }
+	 if not testing:
+       		 return output
+
+     	 else:
+        	return {
+         		 'tokens_output': aux,
+         		 'cls_output': cls_output,
+         		 'output': output,
+         		 'linear_output': self.linear
+     		 }
 
 model = BERTArticleClassificator(NCLASSES)
 model = model.to(device)
