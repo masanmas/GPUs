@@ -1,0 +1,7 @@
+read "Type"
+
+if[$Type -e 0];
+then
+git config credential.helper store
+else
+git config credential.helper store
