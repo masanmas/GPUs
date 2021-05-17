@@ -29,14 +29,13 @@ except:
     print("ERROR 001: Error reading Train/Test files")
     exit()
 
-print(df_train.keys())
-exit()
+
 #SETTING RANDOM VARIABLES
 np.random.seed(RANDOM_SEED)
 torch.manual_seed(RANDOM_SEED)
 
 device = ('cuda:0' if torch.cuda.is_available() else 'CPU')
-tokenizer = BertTokenizer.from_pretrained(PRETRAINED_MODEL)
+tokenizer = BertTokenizer.from_pretrained(PRETRAINED_BERT_MODEL)
 
 class IMDBdataset(Dataset):
     
@@ -68,12 +67,12 @@ class IMDBdataset(Dataset):
             'review': review,
             'input_ids': encoding['input_ids'].flatten(),
             'attention_mask': encoding['attention_mask'].flatten(),
-            'label': torch.tensor(label, dtype=torch.int32)
+            'label': torch.tensor(label, dtype=torch.long)
         } 
 
 def data_loader(df, tokenizer, max_len, batch_size):
     dataset = IMDBdataset(
-        review = df.view.to_numpy(),
+        reviews = df.view.to_numpy(),
         labels = df.mark.to_numpy(),
         tokenizer = tokenizer,
         max_len = MAX_LEN
