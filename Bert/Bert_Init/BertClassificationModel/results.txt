@@ -1,0 +1,125 @@
+Epoch 1 de 25
+----------
+Entrenamiento: Loss: 1.0317434975342317, accuracy: 0.6625
+Validación: Loss: 0.7771187009679716, accuracy: 0.7438181818181818
+
+Epoch 2 de 25
+----------
+Entrenamiento: Loss: 0.6167440465309403, accuracy: 0.796590909090909
+Validación: Loss: 0.7781911787338728, accuracy: 0.7601818181818182
+
+Epoch 3 de 25
+----------
+Entrenamiento: Loss: 0.40836942130327225, accuracy: 0.8659318181818181
+Validación: Loss: 0.8827633096208406, accuracy: 0.7618181818181817
+
+Epoch 4 de 25
+----------
+Entrenamiento: Loss: 0.28001901106942784, accuracy: 0.9117727272727272
+Validación: Loss: 1.0294985672848862, accuracy: 0.7494545454545454
+
+Epoch 5 de 25
+----------
+Entrenamiento: Loss: 0.20226478562029926, accuracy: 0.9396136363636363
+Validación: Loss: 1.2574967877116314, accuracy: 0.7523636363636363
+
+Epoch 6 de 25
+----------
+Entrenamiento: Loss: 0.1510078931667588, accuracy: 0.9583863636363635
+Validación: Loss: 1.421194910786526, accuracy: 0.7523636363636363
+
+Epoch 7 de 25
+----------
+Entrenamiento: Loss: 0.11905938362533396, accuracy: 0.9688181818181818
+Validación: Loss: 1.6401111208508874, accuracy: 0.751090909090909
+
+Epoch 8 de 25
+----------
+Entrenamiento: Loss: 0.09800324230302464, accuracy: 0.9756136363636363
+Validación: Loss: 1.738464139575182, accuracy: 0.7518181818181817
+
+Epoch 9 de 25
+----------
+Entrenamiento: Loss: 0.07707047724723816, accuracy: 0.981090909090909
+Validación: Loss: 1.8184978433473165, accuracy: 0.759090909090909
+
+Epoch 10 de 25
+----------
+Entrenamiento: Loss: 0.0657695194049315, accuracy: 0.9849772727272726
+Validación: Loss: 1.911035749454831, accuracy: 0.758
+
+Epoch 11 de 25
+----------
+Entrenamiento: Loss: 0.05418048132549633, accuracy: 0.9874318181818181
+Validación: Loss: 2.0123500790187094, accuracy: 0.7518181818181817
+
+Epoch 12 de 25
+----------
+Entrenamiento: Loss: 0.046940429920499974, accuracy: 0.9894318181818181
+Validación: Loss: 2.072017653477053, accuracy: 0.7543636363636363
+
+Epoch 13 de 25
+----------
+Entrenamiento: Loss: 0.037608029400760475, accuracy: 0.9917045454545454
+Validación: Loss: 2.1007580634986245, accuracy: 0.7567272727272727
+
+Epoch 14 de 25
+----------
+Entrenamiento: Loss: 0.03224758526953784, accuracy: 0.9926818181818181
+Validación: Loss: 2.095162381786247, accuracy: 0.757090909090909
+
+Epoch 15 de 25
+----------
+Entrenamiento: Loss: 0.024934646606445312, accuracy: 0.9943181818181818
+Validación: Loss: 2.186168102764113, accuracy: 0.7554545454545454
+
+Epoch 16 de 25
+----------
+Entrenamiento: Loss: 0.024525888231667604, accuracy: 0.9947727272727273
+Validación: Loss: 2.2351301897230536, accuracy: 0.7578181818181817
+
+Epoch 17 de 25
+----------
+Entrenamiento: Loss: 0.019123465846885335, accuracy: 0.9957954545454545
+Validación: Loss: 2.3080424073823664, accuracy: 0.7576363636363636
+
+Epoch 18 de 25
+----------
+Entrenamiento: Loss: 0.013750239404765042, accuracy: 0.9967272727272727
+Validación: Loss: 2.315206551707761, accuracy: 0.7592727272727272
+
+Epoch 19 de 25
+----------
+Entrenamiento: Loss: 0.013611142722043125, accuracy: 0.9970227272727272
+Validación: Loss: 2.3528410907574866, accuracy: 0.7634545454545454
+
+Epoch 20 de 25
+----------
+Entrenamiento: Loss: 0.00933661599592729, accuracy: 0.9977045454545453
+Validación: Loss: 2.419949934146432, accuracy: 0.7585454545454545
+
+Epoch 21 de 25
+----------
+Entrenamiento: Loss: 0.008263908619230443, accuracy: 0.9980681818181818
+Validación: Loss: 2.4241613139246785, accuracy: 0.7641818181818182
+
+Epoch 22 de 25
+----------
+Entrenamiento: Loss: 0.005884644936431538, accuracy: 0.9985454545454545
+Validación: Loss: 2.4633796345875707, accuracy: 0.7634545454545454
+
+Epoch 23 de 25
+----------
+Entrenamiento: Loss: 0.00406493383104151, accuracy: 0.9989772727272727
+Validación: Loss: 2.4546210783165554, accuracy: 0.7621818181818182
+
+Epoch 24 de 25
+----------
+Entrenamiento: Loss: 0.0034105683294209568, accuracy: 0.9991590909090908
+Validación: Loss: 2.465153251449729, accuracy: 0.7654545454545454
+
+Epoch 25 de 25
+----------
+Entrenamiento: Loss: 0.003226886814290827, accuracy: 0.9990681818181818
+Validación: Loss: 2.4612725756542626, accuracy: 0.7632727272727272
+
