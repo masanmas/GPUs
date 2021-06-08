@@ -9,8 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
-ARTICLE_MODEL = "../Bert_Init/"
+from mask_model import LoadMaskModel
+from qa_model import LoadQAModel
 
 class Ui_Dialog(object):
     def exit_app(self):
@@ -19,8 +19,7 @@ class Ui_Dialog(object):
     def enable_randomize(self, x):
       self.numTokens.setEnabled(bool(x))
       self.numTokens.setText("")
-      self.Clasificador.raise_()
-	
+   
     def change_window(self, index):
       if index == 0: 
         self.Mask.raise_()
@@ -43,7 +42,20 @@ class Ui_Dialog(object):
         self.Clasificador.setEnabled(False)
         self.Mask.setEnabled(False)
 
+    def run_app(self):
+        index = self.modeloSeleccion.currentIndex()
 
+        if index == 0:
+            predicted_token = maskModel.evaluate_mask(self.fraseEntrada.text(), 4)
+            self.textoPredicho.setText(predicted_token)
+
+        elif index == 1:
+            pass
+
+        elif index == 2:
+            answers = qaModel.answer_questions(questions=[self.pregunta1.toPlainText(), self.pregunta2.toPlainText()], abstract=self.texto.toPlainText())
+            self.respuesta1.setText(answers[0])
+            self.respuesta2.setText(answers[1])
 
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
@@ -128,6 +140,8 @@ class Ui_Dialog(object):
         self.run = QtWidgets.QPushButton(Dialog)
         self.run.setGeometry(QtCore.QRect(310, 370, 75, 23))
         self.run.setObjectName("run")
+        self.run.clicked.connect(self.run_app)
+
         self.Mask = QtWidgets.QGroupBox(Dialog)
         self.Mask.setGeometry(QtCore.QRect(20, 50, 461, 311))
         self.Mask.setAutoFillBackground(True)
@@ -249,6 +263,9 @@ class Ui_Dialog(object):
 
 if __name__ == "__main__":
     import sys
+    maskModel = LoadMaskModel()
+    qaModel = LoadQAModel()
+
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
