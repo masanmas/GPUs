@@ -167,7 +167,7 @@ def eval_model(model, data_loader, loss_fn, device, n_examples):
 
     return correct_predictions.double()/n_examples, np.mean(losses)
 
-test_acc_max, test_acc_index = 0, 0
+test_acc_max, test_acc_index = 0.0, 0
 
 for epoch in range(EPOCHS):
     print('Epoch {} de {}'.format(epoch+1, EPOCHS))
@@ -184,10 +184,13 @@ for epoch in range(EPOCHS):
     print('Validación: Loss: {}, accuracy: {}'.format(test_loss, test_acc))
     print('')
 
-    if test_acc > test_acc_max:
-      test_acc_max = test_acc
+    print(type(test_acc), type(test_acc_max), type(epoch))
+    if round(float(test_acc.detach().numpy()), 2) > test_acc_max:
+      test_acc_max = round(float(test_acc.detach().numpy()), 2)
       test_acc_index = epoch
     
     elif epoch - test_acc_index >= PATIENCE:
       print('STOP AT {} EPOCH OBTAINED MAX {} FROM EPOCH {}'.format(epoch, train_acc_max, train_acc_index))
       break
+
+x = torch.Tensor([1,2.2222,3])
