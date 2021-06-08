@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1rATTKS2rKIZlAoTof5ezEUEpMpX_j1Rt
 """
 
-!pip install transformers
+#!pip install transformers
 
 import pandas as pd
 import numpy as np
@@ -22,7 +22,7 @@ from sklearn.model_selection import train_test_split
 import os
 
 #DEFINITION OF CONSTANTS
-FILE_PATH = '/content/drive/MyDrive/GPUs/Bert/DataSet/News_DataSet/41_CLASSES/News41k.csv'
+FILE_PATH = '../../DataSet/News_DataSet/11_CLASSES/MoreThan5k.csv'
 RANDOM_SEED = 42
 MAX_LEN = 200
 BATCH_SIZE = 16
