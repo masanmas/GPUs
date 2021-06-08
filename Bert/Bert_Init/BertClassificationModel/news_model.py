@@ -22,7 +22,7 @@ from sklearn.model_selection import train_test_split
 import os
 
 #DEFINITION OF CONSTANTS
-FILE_PATH = '../../DataSet/News_DataSet/11_CLASSES/MoreThan5k.csv'
+FILE_PATH = '../../DataSet/News_DataSet/41_CLASSES/News41k.csv'
 RANDOM_SEED = 42
 MAX_LEN = 200
 BATCH_SIZE = 16
