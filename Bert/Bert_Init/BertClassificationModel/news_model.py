@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1rATTKS2rKIZlAoTof5ezEUEpMpX_j1Rt
 """
 
-#!pip install transformers
+!pip install transformers
 
 import pandas as pd
 import numpy as np
@@ -22,13 +22,14 @@ from sklearn.model_selection import train_test_split
 import os
 
 #DEFINITION OF CONSTANTS
-FILE_PATH = '../../DataSet/News_DataSet/11_CLASSES/MoreThan5k.csv'
+FILE_PATH = '/content/drive/MyDrive/GPUs/Bert/DataSet/News_DataSet/11_CLASSES/MoreThan5k.csv'
 RANDOM_SEED = 42
 MAX_LEN = 200
 BATCH_SIZE = 16
-NCLASSES = 41
+NCLASSES = 11
 PRETRAINED_BERT_MODEL = 'bert-base-cased'
 NHIDDENS = 768
+PATIENCE = 3
 NAME_CLASSES = []
 
 #SETTING RANDOM VARIABLES
@@ -166,6 +167,8 @@ def eval_model(model, data_loader, loss_fn, device, n_examples):
 
     return correct_predictions.double()/n_examples, np.mean(losses)
 
+test_acc_max, test_acc_index = 0, 0
+
 for epoch in range(EPOCHS):
     print('Epoch {} de {}'.format(epoch+1, EPOCHS))
     print('-'*10)
@@ -180,3 +183,11 @@ for epoch in range(EPOCHS):
     print('Entrenamiento: Loss: {}, accuracy: {}'.format(train_loss, train_acc))
     print('Validación: Loss: {}, accuracy: {}'.format(test_loss, test_acc))
     print('')
+
+    if test_acc > test_acc_max:
+      test_acc_max = test_acc
+      test_acc_index = epoch
+    
+    elif epoch - test_acc_index >= PATIENCE:
+      print('STOP AT {} EPOCH OBTAINED MAX {} FROM EPOCH {}'.format(epoch, train_acc_max, train_acc_index))
+      break
