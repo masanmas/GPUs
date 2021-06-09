@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1rATTKS2rKIZlAoTof5ezEUEpMpX_j1Rt
 """
 
-!pip install transformers
+#!pip install transformers
 
 import pandas as pd
 import numpy as np
@@ -22,11 +22,11 @@ from sklearn.model_selection import train_test_split
 import os
 
 #DEFINITION OF CONSTANTS
-FILE_PATH = '/content/drive/MyDrive/GPUs/Bert/DataSet/News_DataSet/11_CLASSES/MoreThan5k.csv'
+FILE_PATH = '../../DataSet/News_DataSet/41_CLASSES/News41k.csv'
 RANDOM_SEED = 42
 MAX_LEN = 200
 BATCH_SIZE = 16
-NCLASSES = 11
+NCLASSES = 41
 PRETRAINED_BERT_MODEL = 'bert-base-cased'
 NHIDDENS = 768
 PATIENCE = 3
@@ -183,14 +183,14 @@ for epoch in range(EPOCHS):
     print('Entrenamiento: Loss: {}, accuracy: {}'.format(train_loss, train_acc))
     print('Validación: Loss: {}, accuracy: {}'.format(test_loss, test_acc))
     print('')
-
+    
     print(type(test_acc), type(test_acc_max), type(epoch))
-    if round(float(test_acc.detach().numpy()), 2) > test_acc_max:
-      test_acc_max = round(float(test_acc.detach().numpy()), 2)
+    if round(float(test_acc.cpu().detach().numpy()), 2) > test_acc_max:
+      test_acc_max = round(float(test_acc.cpu().detach().numpy()), 2)
       test_acc_index = epoch
     
     elif epoch - test_acc_index >= PATIENCE:
-      print('STOP AT {} EPOCH OBTAINED MAX {} FROM EPOCH {}'.format(epoch, train_acc_max, train_acc_index))
+      print('STOP AT {} EPOCH OBTAINED MAX {} FROM EPOCH {}'.format(epoch, test_acc_max, test_acc_index))
       break
 
-x = torch.Tensor([1,2.2222,3])
+
