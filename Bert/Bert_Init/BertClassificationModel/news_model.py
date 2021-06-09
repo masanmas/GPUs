@@ -40,7 +40,7 @@ np.random.seed(RANDOM_SEED)
 torch.manual_seed(RANDOM_SEED)
 
 #READING FILE
-df = pd.read_csv(FILE_PATH)
+#df = pd.read_csv(FILE_PATH)
 
 #Other variables
 device = ('cuda:0' if torch.cuda.is_available() else 'cpu')
