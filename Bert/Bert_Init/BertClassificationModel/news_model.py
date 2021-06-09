@@ -22,12 +22,14 @@ from sklearn.model_selection import train_test_split
 import os
 
 #DEFINITION OF CONSTANTS
-FILE_PATH = '../../DataSet/News_DataSet/11_CLASSES/MoreThan5k.csv'
-SAVE_MODEL = '../../Bert_Checkpoints/ArticleClassification.pth'
+TRAIN_PATH = '../../DataSet/News_DataSet/11_CLASSES/Balanced/train.csv'
+VAL_PATH = '../../DataSet/News_DataSet/11_CLASSES/Balanced/validation.csv'
+TEST_PATH = '../../DataSet/News_DataSet/11_CLASSES/Balanced/test.csv'
+SAVE_MODEL = '../../Bert_Checkpoints/ArticleClassification_v2.pth'
 RANDOM_SEED = 42
 MAX_LEN = 200
 BATCH_SIZE = 16
-NCLASSES = 41
+NCLASSES = 11
 PRETRAINED_BERT_MODEL = 'bert-base-cased'
 NHIDDENS = 768
 PATIENCE = 3
@@ -87,8 +89,11 @@ def data_loader(df, tokenizer, max_len, batch_size):
 
     return DataLoader(dataset, batch_size=BATCH_SIZE, num_workers=2)
 
-df_train, df_test = train_test_split(df, test_size=0.2, random_state=42)
-df_validation, df_test = train_test_split(df_test, test_size=0.5, random_state=42)
+#df_train, df_test = train_test_split(df, test_size=0.2, random_state=42)
+#df_validation, df_test = train_test_split(df_test, test_size=0.5, random_state=42)
+df_train = pd.read_csv(TRAIN_PATH)
+df_validation = pd.read_csv(VAL_PATH)
+df_test = pd.read_csv(TEST_PATH)
 
 #Loader 
 train_data_loader = data_loader(df_train, tokenizer, MAX_LEN, BATCH_SIZE)
