@@ -22,7 +22,8 @@ from sklearn.model_selection import train_test_split
 import os
 
 #DEFINITION OF CONSTANTS
-FILE_PATH = '../../DataSet/News_DataSet/41_CLASSES/News41k.csv'
+FILE_PATH = '../../DataSet/News_DataSet/11_CLASSES/MoreThan5k.csv'
+SAVE_MODEL = '../../Bert_Checkpoints/ArticleClassification.pth'
 RANDOM_SEED = 42
 MAX_LEN = 200
 BATCH_SIZE = 16
@@ -184,7 +185,8 @@ for epoch in range(EPOCHS):
     print('Validación: Loss: {}, accuracy: {}'.format(test_loss, test_acc))
     print('')
     
-    print(type(test_acc), type(test_acc_max), type(epoch))
+    
+    #print(type(test_acc), type(test_acc_max), type(epoch))
     if round(float(test_acc.cpu().detach().numpy()), 2) > test_acc_max:
       test_acc_max = round(float(test_acc.cpu().detach().numpy()), 2)
       test_acc_index = epoch
@@ -194,3 +196,4 @@ for epoch in range(EPOCHS):
       break
 
 
+torch.save(model.state_dict(), SAVE_MODEL)
