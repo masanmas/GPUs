@@ -1,0 +1,31 @@
+Epoch 1 de 25
+----------
+Entrenamiento: Loss: 0.9687639545906673, accuracy: 0.6848636363636363
+Validación: Loss: 1.0759635227624067, accuracy: 0.6509090909090909
+
+Epoch 2 de 25
+----------
+Entrenamiento: Loss: 0.5683247421058741, accuracy: 0.8172272727272727
+Validación: Loss: 1.148914124166896, accuracy: 0.6643636363636364
+
+Epoch 3 de 25
+----------
+eEntrenamiento: Loss: 0.3669507497115569, accuracy: 0.8825
+Validación: Loss: 1.4045333922948948, accuracy: 0.6650909090909091
+
+Epoch 4 de 25
+----------
+Entrenamiento: Loss: 0.24756453946774656, accuracy: 0.9258181818181818
+Validación: Loss: 1.6498310786000518, accuracy: 0.6650909090909091
+
+Epoch 5 de 25
+----------
+Entrenamiento: Loss: 0.17868390840833837, accuracy: 0.9505454545454545
+Validación: Loss: 2.070109166421516, accuracy: 0.6601818181818181
+
+Epoch 6 de 25
+----------
+ggddddEntrenamiento: Loss: 0.13483282208713618, accuracy: 0.9643409090909091
+Validación: Loss: 2.359028467691915, accuracy: 0.6579999999999999
+
+STOP AT 5 EPOCH OBTAINED MAX 0.67 FROM EPOCH 2
